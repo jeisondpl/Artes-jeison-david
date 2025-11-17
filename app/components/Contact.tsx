@@ -17,11 +17,36 @@ const socials = [
 ]
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setSubmitted(true)
+    setStatus('loading')
+
+    const formData = new FormData(event.currentTarget)
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      message: formData.get('message') as string,
+    }
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        setStatus('success')
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      setStatus('error')
+    }
   }
 
   return (
@@ -52,57 +77,65 @@ export default function Contact() {
         </div>
 
         <div className='panel p-8'>
-          <form className='space-y-5' onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor='name' className='block text-sm font-semibold text-ocre-800'>
-                Nombre
-              </label>
-              <input
-                id='name'
-                name='name'
-                type='text'
-                required
-                className='mt-2 w-full rounded-xl border border-ocre-200 bg-white px-4 py-3 text-ocre-900 shadow-inner shadow-ocre-900/5 focus:border-ocre-400 focus:outline-none focus:ring-2 focus:ring-terracota-400'
-                placeholder='Tu nombre'
-              />
+          {status === 'success' ? (
+            <div className='flex h-full flex-col items-center justify-center rounded-xl bg-crema-50 text-center'>
+              <h3 className='font-serif text-2xl text-ocre-900'>¡Mensaje enviado!</h3>
+              <p className='mt-2 text-ocre-700'>Gracias por contactarme. Te responderé pronto.</p>
             </div>
+          ) : (
+            <form className='space-y-5' onSubmit={handleSubmit}>
+              <div>
+                <label htmlFor='name' className='block text-sm font-semibold text-ocre-800'>
+                  Nombre
+                </label>
+                <input
+                  id='name'
+                  name='name'
+                  type='text'
+                  required
+                  className='mt-2 w-full rounded-xl border border-ocre-200 bg-white px-4 py-3 text-ocre-900 shadow-inner shadow-ocre-900/5 focus:border-ocre-400 focus:outline-none focus:ring-2 focus:ring-terracota-400'
+                  placeholder='Tu nombre'
+                />
+              </div>
 
-            <div>
-              <label htmlFor='email' className='block text-sm font-semibold text-ocre-800'>
-                Email
-              </label>
-              <input
-                id='email'
-                name='email'
-                type='email'
-                required
-                className='mt-2 w-full rounded-xl border border-ocre-200 bg-white px-4 py-3 text-ocre-900 shadow-inner shadow-ocre-900/5 focus:border-ocre-400 focus:outline-none focus:ring-2 focus:ring-terracota-400'
-                placeholder='nombre@correo.com'
-              />
-            </div>
+              <div>
+                <label htmlFor='email' className='block text-sm font-semibold text-ocre-800'>
+                  Email
+                </label>
+                <input
+                  id='email'
+                  name='email'
+                  type='email'
+                  required
+                  className='mt-2 w-full rounded-xl border border-ocre-200 bg-white px-4 py-3 text-ocre-900 shadow-inner shadow-ocre-900/5 focus:border-ocre-400 focus:outline-none focus:ring-2 focus:ring-terracota-400'
+                  placeholder='nombre@correo.com'
+                />
+              </div>
 
-            <div>
-              <label htmlFor='message' className='block text-sm font-semibold text-ocre-800'>
-                Mensaje
-              </label>
-              <textarea
-                id='message'
-                name='message'
-                required
-                rows={5}
-                className='mt-2 w-full rounded-xl border border-ocre-200 bg-white px-4 py-3 text-ocre-900 shadow-inner shadow-ocre-900/5 focus:border-ocre-400 focus:outline-none focus:ring-2 focus:ring-terracota-400'
-                placeholder='Cuéntame en qué puedo ayudarte...'
-              />
-            </div>
+              <div>
+                <label htmlFor='message' className='block text-sm font-semibold text-ocre-800'>
+                  Mensaje
+                </label>
+                <textarea
+                  id='message'
+                  name='message'
+                  required
+                  rows={5}
+                  className='mt-2 w-full rounded-xl border border-ocre-200 bg-white px-4 py-3 text-ocre-900 shadow-inner shadow-ocre-900/5 focus:border-ocre-400 focus:outline-none focus:ring-2 focus:ring-terracota-400'
+                  placeholder='Cuéntame en qué puedo ayudarte...'
+                />
+              </div>
 
-            <button
-              type='submit'
-              className='w-full rounded-full bg-terracota-500 px-6 py-3 font-semibold text-white shadow-lg shadow-terracota-500/25 transition hover:-translate-y-0.5 hover:bg-terracota-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocre-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white'
-            >
-              Enviar mensaje
-            </button>
-            {submitted && <p className='text-sm font-medium text-ocre-700'>¡Gracias! Este formulario está listo para conectarse con tu correo o servicio favorito.</p>}
-          </form>
+              <button
+                type='submit'
+                disabled={status === 'loading'}
+                className='w-full rounded-full bg-terracota-500 px-6 py-3 font-semibold text-white shadow-lg shadow-terracota-500/25 transition hover:-translate-y-0.5 hover:bg-terracota-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ocre-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:bg-terracota-300'
+              >
+                {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
+              </button>
+              {status === 'error' && <p className='text-sm font-medium text-red-600'>Hubo un error al enviar el mensaje. Inténtalo de nuevo.</p>}
+            </form>
+          )}
         </div>
       </div>
     </section>
