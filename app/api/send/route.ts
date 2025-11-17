@@ -62,7 +62,7 @@ export async function POST(request: Request) {
     // Nota: Resend no permite enviar desde @gmail.com sin verificar dominio
     // Usamos onboarding@resend.dev para testing (funciona sin verificación)
     const { data, error } = await resend.emails.send({
-      from: 'Jeison Díaz Art <onboarding@resend.dev>',
+      from: 'Persona interesada <onboarding@resend.dev>',
       to: ['jeisonartestm@gmail.com'],
       subject: `Nuevo mensaje de ${name} - Portafolio Web`,
       html: emailHtml,
