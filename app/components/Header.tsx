@@ -1,7 +1,9 @@
 import Image from "next/image";
 
 const navLinks = [
+  { href: "#historia", label: "Historia" },
   { href: "#sobre", label: "Sobre el artista" },
+  { href: "#destacados", label: "Obras" },
   { href: "#galeria", label: "Galería" },
   { href: "#servicios", label: "Servicios" },
   { href: "#contacto", label: "Contacto" },

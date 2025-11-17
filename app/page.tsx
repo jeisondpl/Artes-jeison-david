@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import ParallaxGallery from "./components/ParallaxGallery";
+import ParallaxHero from "./components/ParallaxHero";
 import Services from "./components/Services";
 
 export default function Home() {
@@ -12,7 +14,9 @@ export default function Home() {
       <Header />
       <main className="space-y-4">
         <Hero />
+        <ParallaxHero />
         <About />
+        <ParallaxGallery />
         <Gallery />
         <Services />
         <Contact />

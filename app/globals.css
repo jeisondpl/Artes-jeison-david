@@ -43,3 +43,16 @@ a {
 .section-padding {
   @apply px-4 py-16 sm:py-24;
 }
+
+/* Parallax helper con fallback móvil */
+.parallax-bg {
+  background-attachment: fixed;
+  will-change: background-position;
+}
+
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll;
+    background-position: center;
+  }
+}

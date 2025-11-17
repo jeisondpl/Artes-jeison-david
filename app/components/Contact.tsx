@@ -3,9 +3,26 @@
 import { FormEvent, useState } from "react";
 
 const socials = [
-  { label: "Instagram", href: "https://www.instagram.com/", handle: "@jeison.diaz.art" },
-  { label: "Facebook", href: "https://www.facebook.com/", handle: "fb.com/jeison.diaz.art" },
-  { label: "Teléfono / WhatsApp", href: "tel:+573000000000", handle: "+57 300 000 0000" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/jdiaz.art?igsh=MTd6N3FpcjRqNTJwMg==",
+    handle: "@jdiaz.art",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=100090278273465&mibextid=ZbWKwL",
+    handle: "facebook.com/jdiaz.art",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@jdiaz.art?_r=1&_t=ZS-91U0N8cwfKy",
+    handle: "@jdiaz.art",
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/?text=TU_MENSAJE_AQUI",
+    handle: "+57 320 596 66 24",
+  },
 ];
 
 export default function Contact() {
@@ -40,6 +57,8 @@ export default function Contact() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center justify-between rounded-xl border border-ocre-100 bg-crema-50 px-4 py-3 text-ocre-800 transition hover:-translate-y-0.5 hover:border-ocre-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracota-400 focus-visible:ring-offset-2 focus-visible:ring-offset-crema-50"
                 >
                   <span className="font-medium">{social.label}</span>
