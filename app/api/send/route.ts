@@ -59,11 +59,9 @@ export async function POST(request: Request) {
     `;
 
     // Enviar email usando Resend
-    // Para testing usa: 'onboarding@resend.dev'
-    // Para producción usa: 'Portfolio <noreply@tudominio.com>'
     const { data, error } = await resend.emails.send({
-      from: 'Artista <onboarding@resend.dev>',
-      to: ['jeisond3@gmail.com'],
+      from: 'Jeison Díaz Art <jeisonartestm@gmail.com>',
+      to: ['jeisonartestm@gmail.com'],
       subject: `Nuevo mensaje de ${name}`,
       html: emailHtml,
       replyTo: email,
