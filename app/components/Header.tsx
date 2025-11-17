@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const navLinks = [
   { href: "#sobre", label: "Sobre el artista" },
   { href: "#galeria", label: "Galería" },
@@ -11,7 +13,13 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4">
         <nav className="mt-6 flex items-center justify-between rounded-full border border-ocre-100 bg-white/80 px-6 py-3 shadow-lg shadow-ocre-900/5 backdrop-blur">
           <div className="flex items-center gap-3">
-            <span className="h-10 w-10 rounded-full bg-gradient-to-br from-ocre-400 to-terracota-500" />
+            <Image
+              src="/images/logo3.png"
+              alt="Logo Jeison Arte"
+              width={60}
+              height={60}
+              className="rounded-full"
+            />
             <div className="leading-tight">
               <p className="text-xs uppercase tracking-[0.2em] text-ocre-600">
                 Pintor artístico

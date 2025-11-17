@@ -26,19 +26,33 @@ export default function About() {
           <div className="panel lg:col-span-2">
             <div className="space-y-4 p-8 sm:p-10">
               <p className="text-lg leading-relaxed text-ocre-800">
-                Jeison David Díaz es un pintor de Santa Marta con 23 años de
-                oficio. Desde joven convive con una condición motora que le
-                exigió reinventarse, y en el arte encontró su manera de
-                contar—con color y textura—historias de resiliencia y belleza
-                cotidiana. Su obra combina tonos cálidos del Caribe con
-                composiciones contemporáneas.
+                Hola, mi nombre es Jeison David, tengo 22 años y vivo en Santa
+                Marta. Nací con una condición que hace que mi proceso mental y
+                cognitivo sea un poco más lento que el de otras personas, pero
+                también me ha dado una sensibilidad especial para sentir y mirar
+                el mundo.
               </p>
               <p className="leading-relaxed text-ocre-700">
-                Además de crear, Jeison enseña. Comparte su experiencia con
-                niños y adultos, guiándolos para perderle el miedo al lienzo y
-                expresar su propia voz. Como hermano mayor de cinco, el cuidado
-                y la paciencia son parte de su sello: cada clase y cada pintura
-                están pensadas para acompañar procesos personales.
+                A veces me cuesta expresar lo que pienso con palabras, pero
+                cuando pinto… todo fluye. Los colores hablan por mí. Cada trazo
+                es una emoción, un recuerdo, una manera de entender lo que me
+                rodea. Mi condición no me limita: simplemente hace que todo lo
+                vea con más pausa, más detalle y más corazón.
+              </p>
+              <p className="leading-relaxed text-ocre-700">
+                Pintar me ayuda a contar mi historia, y enseñar arte me llena el
+                alma, porque creo que todos podemos encontrar algo bonito dentro
+                de nosotros cuando hacemos algo con amor.
+              </p>
+              <p className="leading-relaxed text-ocre-700">
+                Este espacio es para compartir mis obras y para abrir
+                oportunidades que me ayuden a seguir creciendo como artista y
+                como persona. Gracias por apoyarme, por ver mi arte y por
+                acompañarme en este camino.
+              </p>
+              <p className="text-lg leading-relaxed text-ocre-800">
+                Bienvenidos a mi mundo… un mundo visto a mi ritmo, con mucha
+                luz, verdad y color. 🎨💛
               </p>
             </div>
           </div>
