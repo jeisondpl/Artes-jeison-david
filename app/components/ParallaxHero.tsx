@@ -20,7 +20,7 @@ export default function ParallaxHero() {
             id="historia-title"
             className="font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl"
           >
-            23 años de arte, inspiración y resiliencia
+            13 años de arte, inspiración y resiliencia
           </h2>
           <p className="max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl">
             Jeison transforma cada desafío en color. Desde Santa Marta, su

@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Jeison David Díaz – Pintor Artístico",
   description:
-    "23 años de arte, pasión y enseñanza desde Santa Marta, Magdalena. Conoce la obra y servicios del pintor Jeison David Díaz.",
+    "13 años de arte, pasión y enseñanza desde Santa Marta, Magdalena. Conoce la obra y servicios del pintor Jeison David Díaz.",
   openGraph: {
     title: "Jeison David Díaz – Pintor Artístico",
     description:

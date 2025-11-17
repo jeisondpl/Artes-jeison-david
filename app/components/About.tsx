@@ -1,6 +1,6 @@
 const highlights = [
   { label: "Ciudad", value: "Santa Marta, Magdalena" },
-  { label: "Experiencia", value: "23 años creando y enseñando" },
+  { label: "Experiencia", value: "13 años creando y enseñando" },
   { label: "Condición", value: "Resiliencia frente a una condición motora" },
   { label: "Familia", value: "Hermano mayor entre 5" },
   { label: "Pasatiempos", value: "Entrenamiento en gimnasio" },

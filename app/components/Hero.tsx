@@ -16,7 +16,7 @@ export default function Hero() {
               Jeison David Díaz – Pintor Artístico
             </h1>
             <p className="text-lg text-ocre-700 sm:text-xl">
-              23 años de arte, pasión y enseñanza desde Santa Marta. Historias
+              13 años de arte, pasión y enseñanza desde Santa Marta. Historias
               de color que inspiran y forman nuevas generaciones.
             </p>
           </div>
@@ -37,7 +37,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-ocre-700 lg:justify-start">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-terracota-500" aria-hidden />
-              23 años de carrera
+              13 años de carrera
             </span>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-ocre-500" aria-hidden />
